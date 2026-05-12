@@ -117,6 +117,10 @@
 
 ## 🆕 What's New
 
+### 🎯 2026-05-12 · /discover from a venue — "what should I read first from ICLR 2024?"
+
+Run `/discover --venue iclr --year 2024` (or any conference/year) and get a personalized shortlist of papers from that venue, ranked by relevance to what's already in your wiki. Instead of scrolling a 7000-paper proceedings, you see the dozen that actually matter for *your* research direction, each with a rationale tied to topics and methods you already track. No new API keys, no ingest side-effects on your wiki — just a ranked reading list. Supports NeurIPS, ICLR, ICML, and other venues covered by [Paper Copilot](https://github.com/papercopilot/paperlists).
+
 ### 📰 2026-05-09 · Daily arXiv — fresh-paper recommendations, on demand or scheduled
 
 Run `/daily-arxiv` for a one-off pass, or `/daily-arxiv setup` to schedule the same pipeline in GitHub Actions. The skill builds an evidence packet from arXiv + Semantic Scholar + DeepXiv, lets the LLM rank candidates against your wiki interests, and delivers a digest by e-mail. Explicit `--mode auto-ingest` calls `/ingest` for high-confidence picks; `inform` mode just notifies.
@@ -275,7 +279,7 @@ A real `/daily-arxiv` run: ranked recommendations with scores, rationales, wiki 
 | `/prefill <domain>` | Optionally seed `foundations/` with background knowledge |
 | `/init [topic]` | Bootstrap a full wiki from user raw sources plus optional discovery |
 | `/ingest <source>` | Parse a paper → wiki pages + cross-references |
-| `/discover` | Recommend ranked next-read papers from anchors, a topic, or the current wiki |
+| `/discover` | Recommend ranked next-read papers from anchors, a topic, the current wiki, or a venue/year |
 | `/edit <request>` | Add/remove sources or update wiki content |
 | `/ask <question>` | Query the wiki, crystallize answers back |
 | `/check` | Health scan: broken links, missing cross-refs, consistency |
@@ -606,7 +610,7 @@ CI inform mode 可使用 `ANTHROPIC_API_KEY` 或 `CLAUDE_CODE_OAUTH_TOKEN` 启�
 | `/prefill` | 可选地预填 `foundations/` 背景知识 |
 | `/init` | 基于用户 raw 素材并按需做外部发现来搭建 wiki |
 | `/ingest` | 消化论文，创建页面 + 交叉引用 |
-| `/discover` | 从 anchor、topic 或当前 wiki 推荐排序后的下一批待读论文 |
+| `/discover` | 从 anchor、topic、当前 wiki 或 venue/year 推荐排序后的下一批待读论文 |
 | `/edit` | 增删 raw 或更新 wiki |
 | `/ask` | 对 wiki 提问 |
 | `/check` | wiki 健康检查 |
